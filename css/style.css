@@ -1,3 +1,45 @@
+.container {
+	margin: 0 auto;
+    max-width: 335px;
+}
+
+#hebergements{
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+aside, footer {
+    background-color: #F2F2F2;
+}
+
+nav {
+    display: flex;
+    width: 100%;
+}
+
+img {
+    width: 325px;
+    height: auto;
+}
+
+aside > div > img {
+    width: 127px;
+    height: auto;
+}
+
 p {
     font-family: 'Raleway', sans-serif;
+}
+
+a {
+    text-decoration: none;
+    color : black;
+}
+
+ul {
+    list-style-type: none;
+}
+
+span {
+    font-weight: bold;
 }
