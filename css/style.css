@@ -1,34 +1,86 @@
+:root { 
+    --bleu-clair: #DEEBFF; 
+    --bleu: #0065FC;
+    --gris: #F2F2F2;
+}
+
 .container {
 	margin: 0 auto;
-    max-width: 335px;
+    width: 335px;
 }
+
+.flex {
+    display: flex;
+}
+
+.row {
+    flex-direction: row;
+}
+
+.center {
+    align-items: center;
+}
+
+.logo {
+    width: 95px;
+    padding-left: 20px;
+}
+
+.bleu {
+    color: var(--bleu);
+}
+
+.ancres {
+    border-bottom: 0.2rem solid var(--bleu);
+    padding-top: 30px;
+    padding-bottom: 15px;
+}
+
+.inscription {
+   
+}
+
 
 #hebergements{
     display: flex;
     flex-direction: column-reverse;
 }
 
+
 aside, footer {
-    background-color: #F2F2F2;
+    background-color: var(--gris);
 }
 
 nav {
     display: flex;
+    flex-basis: 100%;
+}
+
+footer > div > nav {
     width: 100%;
 }
 
 img {
-    width: 325px;
+    width: 100%;
     height: auto;
 }
-
-aside > div > img {
-    width: 127px;
-    height: auto;
-}
-
-p {
+body{
+    width: 375px;
     font-family: 'Raleway', sans-serif;
+    
+}
+
+header {
+    margin-top: 30px;
+    margin-bottom: 40px;
+}
+
+h1{
+    font-size: 24px;
+}
+
+p{
+    font-size: 18px;
 }
 
 a {
@@ -38,8 +90,49 @@ a {
 
 ul {
     list-style-type: none;
+    flex-basis: 100%;
+    padding-left: 0;
+   
 }
 
 span {
     font-weight: bold;
+}
+
+@media (min-width: 376px) {
+    .loupe {
+        display: none;
+    }
+}
+
+@media (max-width: 375px) {
+    .rechercher {
+        display: none;
+    }
+
+    nav {
+        flex-wrap: wrap;
+    }
+
+    nav > div {
+        flex-basis: 50%;
+    }
+
+    nav > div:nth-child(2){
+        order: 3;
+        display: flex;
+        justify-content: center;
+    }
+
+    nav > div:nth-child(3){
+        order: 4;
+        display: flex;
+        justify-content: center;
+    }
+
+    nav > div:nth-child(4){
+        order: 2;
+        display: flex;
+        justify-content: flex-end;
+    }
 }
