@@ -5,8 +5,7 @@
 }
 
 .container {
-	margin: 0 auto;
-    width: 335px;
+	margin: 0 20px;
 }
 
 .flex {
@@ -42,8 +41,8 @@
 }
 
 .logo {
-    width: 95px;
-    padding-left: 20px;
+    width: 95px; 
+    margin-left: 20px;
 }
 
 .bleu {
@@ -67,6 +66,29 @@
     border-bottom-left-radius: 15px;
 }
 
+.info{
+    height: 25px;
+    width: 25px;
+    margin-right: 10px;
+    border-radius: 50px;
+    border: 2px solid var(--gris);
+    justify-content: center;
+    margin-block-start: 0.5em;
+}
+
+.fa-info {
+    color: var(--bleu);
+    
+    
+   
+    
+    font-size: 12px;
+}
+
+.search {
+    margin: 20px 0;
+}
+
 .search input {
     border: none;
     margin-left: 1rem;
@@ -80,6 +102,8 @@
     border-radius: 15px;
     
 }
+
+
 
 .filtre a i {
     color: var(--bleu);
@@ -106,10 +130,26 @@
 }
 
 .ancres {
-    border-bottom: 0.2rem solid var(--bleu);
-    padding-top: 30px;
+    border-bottom: 0.2rem solid var(--gris);
     padding-bottom: 15px;
 }
+
+.ancres:hover {
+    border-bottom: 0.2rem solid var(--gris);
+    padding-bottom: 15px;
+}
+
+.ancres:active {
+    border-bottom: 0.2rem solid var(--bleu);
+    padding-bottom: 15px;
+}
+
+.ancres:visited {
+    border-bottom: 0.2rem solid var(--bleu);
+    padding-bottom: 15px;
+}
+
+
 
 .thumbnail {
     background-color: white;
@@ -164,7 +204,7 @@
 }
 
 .inscription {
-   
+   margin-right: 20px;
 }
 
 
@@ -178,9 +218,28 @@ aside, footer {
     background-color: var(--gris);
 }
 
-nav {
+nav div {
+    flex-basis: 50%;
+    padding-top: 30px;
+}
+
+nav > div:nth-child(2){
+    order: 3;
     display: flex;
-    flex-basis: 100%;
+    justify-content: center;
+}
+
+nav > div:nth-child(3){
+    order: 4;
+    display: flex;
+    justify-content: center;
+}
+
+nav > div:nth-child(4){
+    order: 2;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
 }
 
 footer > div > nav {
@@ -194,8 +253,7 @@ body{
 }
 
 header {
-    margin-top: 30px;
-    margin-bottom: 40px;
+    padding-bottom: 40px;
 }
 
 h1{
@@ -237,34 +295,11 @@ span, input {
     }
 }
 
+
 @media (max-width: 375px) {
+    
     .rechercher {
         display: none;
     }
-
-    nav {
-        flex-wrap: wrap;
-    }
-
-    nav > div {
-        flex-basis: 50%;
-    }
-
-    nav > div:nth-child(2){
-        order: 3;
-        display: flex;
-        justify-content: center;
-    }
-
-    nav > div:nth-child(3){
-        order: 4;
-        display: flex;
-        justify-content: center;
-    }
-
-    nav > div:nth-child(4){
-        order: 2;
-        display: flex;
-        justify-content: flex-end;
-    }
+    
 }
