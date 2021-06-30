@@ -81,11 +81,7 @@
 }
 
 .fa-info {
-    color: var(--bleu);
-    
-    
-   
-    
+    color: var(--bleu); 
     font-size: 12px;
 }
 
@@ -95,7 +91,7 @@
 
 .search input {
     border: none;
-    margin-left: 1rem;
+    padding-left: 1rem;
 }
 
 .search button {
@@ -287,9 +283,9 @@ footer > div > nav {
 }
 
 body{
-    width: 375px;
     margin: 0 auto;
     font-family: 'Raleway', sans-serif;
+    box-sizing: border-box;
     
 }
 
@@ -320,7 +316,7 @@ ul {
     padding-left: 0px
 }
 
-footer ul {
+footer ul li {
     padding-left: 20px
 }
 
@@ -334,17 +330,79 @@ span, input {
     font-weight: bold;
 }
 
-@media (min-width: 376px) {
+@media (min-width: 402px) {
     .loupe {
         display: none;
     }
 }
 
 
-@media (max-width: 375px) {
+@media (max-width: 401px) {
     
     .rechercher {
         display: none;
     }
     
 }
+
+@media (min-width: 460px) {
+    .search {
+        width: 420px;
+    }
+}
+
+@media (min-width: 691px) {
+    #activites, #hebergements {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .thumbnail {
+        flex: 1;
+        min-width: 40%;
+        
+    }
+
+    .thumbnail:nth-child(odd) {
+        margin-right: 5px;
+    }
+
+    .thumbnail:nth-child(even) {
+        margin-left: 5px;
+    }
+
+    .thumbnail-2 {
+        flex: 1;
+        min-width: 40%;
+    }
+
+    .thumbnail-2:nth-child(odd) {
+        margin-right: 5px;
+    }
+
+    .thumbnail-2:nth-child(even) {
+        margin-left: 5px;
+    }
+
+    article > div > div {
+        justify-content: space-between;
+    }
+}
+
+@media (min-width: 768px) {
+    
+    footer ul {
+        flex-basis: 50%;
+    }
+
+}
+
+@media (min-width: 1024px) {
+    
+    footer ul {
+        flex-basis: 33%;
+    }
+
+}
+
+
