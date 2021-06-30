@@ -1,3 +1,9 @@
+* {
+	box-sizing: border-box;
+    outline: none;
+    transition: all 0.3s ease 0s; /*effet de transition appliqué sur toutes les propriétés de toutes les balises*/
+}
+
 :root { 
     --bleu-clair: #DEEBFF; 
     --bleu: #0065FC;
@@ -6,6 +12,10 @@
 
 .container {
 	margin: 0 20px;
+}
+
+.container-02 {
+    margin: 30px 50px;
 }
 
 .flex {
@@ -398,7 +408,75 @@ span, input {
 }
 
 @media (min-width: 1024px) {
+
+    nav div {
+        flex-basis: 50%;
+        padding-top: 30px;
+    }
     
+    nav > div:nth-child(2){
+        order: 3;
+        display: flex;
+        justify-content: center;
+    }
+    
+    nav > div:nth-child(3){
+        order: 4;
+        display: flex;
+        justify-content: center;
+    }
+    
+    nav > div:nth-child(4){
+        order: 2;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+    }
+    
+    #hebergements{
+        flex-direction: row;
+    }
+
+    #hebergements article {
+        background-color: var(--gris);
+        flex: 2;
+        margin-right: 20px;
+        border-radius: 20px;
+        padding: 40px;
+
+    }
+
+    #hebergements aside {
+        flex: 1;
+        margin-left: 20px;
+        border-radius: 20px;
+        padding: 40px;
+    }
+
+    .thumbnail {
+        flex: 1;
+        min-width: 26%;
+        
+    }
+
+    .thumbnail:nth-child(odd), .thumbnail:nth-child(even){
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .thumbnail:nth-child(1), .thumbnail:nth-child(2), .thumbnail:nth-child(4), .thumbnail:nth-child(5) {
+        margin-right: 15px;
+    }
+
+    .thumbnail:nth-child(2), .thumbnail:nth-child(3), .thumbnail:nth-child(5), .thumbnail:nth-child(6) {
+        margin-left: 15px;
+    }
+
+    .thumbnail-2 {
+        flex: 1;
+        min-width: 26%;
+    }
+
     footer ul {
         flex-basis: 33%;
     }
