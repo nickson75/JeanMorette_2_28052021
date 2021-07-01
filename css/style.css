@@ -15,7 +15,7 @@
 }
 
 .container-02 {
-    margin: 30px 50px;
+    margin: 0 20px;
 }
 
 .flex {
@@ -38,6 +38,10 @@
     align-items: center;
 }
 
+.j-center {
+    justify-items: center;
+}
+
 .space-between {
     justify-content: space-between;
 }
@@ -52,7 +56,6 @@
 
 .logo {
     width: 95px; 
-    margin-left: 20px;
 }
 
 .bleu {
@@ -123,10 +126,11 @@
     border-radius: 25px;
 }
 
-.filtre a {
+.filtre div {
     border: 2px solid silver;
-    padding: 13px 12px 12px 0;
+    padding: 0 12px 0 0;
     border-radius: 25px;
+    align-items: center;
 }
 
 .filtre span {
@@ -134,30 +138,12 @@
     padding-right: 5px;
 }
 
-.filtre div {
+.filtre a {
     margin-bottom: 10px;
     margin-right: 10px;
 }
 
-.ancres {
-    border-bottom: 0.2rem solid var(--gris);
-    padding-bottom: 15px;
-}
 
-.ancres:hover {
-    border-bottom: 0.2rem solid var(--gris);
-    padding-bottom: 15px;
-}
-
-.ancres:active {
-    border-bottom: 0.2rem solid var(--bleu);
-    padding-bottom: 15px;
-}
-
-.ancres:visited {
-    border-bottom: 0.2rem solid var(--bleu);
-    padding-bottom: 15px;
-}
 
 
 
@@ -264,29 +250,7 @@ article div > p {
     margin-top: 20px;
 }
 
-nav div {
-    flex-basis: 50%;
-    padding-top: 30px;
-}
 
-nav > div:nth-child(2){
-    order: 3;
-    display: flex;
-    justify-content: center;
-}
-
-nav > div:nth-child(3){
-    order: 4;
-    display: flex;
-    justify-content: center;
-}
-
-nav > div:nth-child(4){
-    order: 2;
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-}
 
 footer > div > nav {
     width: 100%;
@@ -407,39 +371,86 @@ span, input {
 
 }
 
-@media (min-width: 1024px) {
+@media (max-width: 1023px) {
 
-    nav div {
+    .ancres {
+        border-bottom: 0.2rem solid var(--gris);
+        padding-bottom: 15px;
+    }
+    
+    .ancres:hover {
+        border-bottom: 0.2rem solid var(--gris);
+        padding-bottom: 15px;
+    }
+    
+    .ancres:active {
+        border-bottom: 0.2rem solid var(--bleu);
+        padding-bottom: 15px;
+    }
+    
+    .ancres:visited {
+        border-bottom: 0.2rem solid var(--bleu);
+        padding-bottom: 15px;
+    }
+    
+    nav a {
         flex-basis: 50%;
         padding-top: 30px;
     }
     
-    nav > div:nth-child(2){
+    nav > a:nth-child(2){
         order: 3;
         display: flex;
         justify-content: center;
     }
     
-    nav > div:nth-child(3){
+    nav > a:nth-child(3){
         order: 4;
         display: flex;
         justify-content: center;
     }
     
-    nav > div:nth-child(4){
+    nav > a:nth-child(4){
         order: 2;
         display: flex;
         align-items: center;
         justify-content: flex-end;
     }
+
     
+}
+
+@media (min-width: 1024px) {
+
+    nav div {
+        
+    }
+
+    nav div:nth-child(1){
+        flex: 6;
+        padding-top: 30px;
+        padding-bottom: 30px;
+    }
+
+    nav div:nth-child(2), nav div:nth-child(3), nav div:nth-child(4){
+        flex: 1;
+        padding: 45px 30px;
+    }
+
+    nav div:nth-child(2) a, nav div:nth-child(3) a, nav div:nth-child(4) a {
+        
+
+    nav div:nth-child(2):hover, nav div:nth-child(3):hover, nav div:nth-child(4):hover {
+        border-top: 2px solid var(--bleu);
+    }
+
     #hebergements{
         flex-direction: row;
     }
 
     #hebergements article {
         background-color: var(--gris);
-        flex: 2;
+        flex: 2.3;
         margin-right: 20px;
         border-radius: 20px;
         padding: 40px;
@@ -480,6 +491,20 @@ span, input {
     footer ul {
         flex-basis: 33%;
     }
+
+    .container-02 {
+        margin: 0 50px;
+    }
+
+    .container-nav {
+        margin: 0 50px;
+    }
+
+    footer ul li {
+        padding-left: 50px
+    }
+
+
 
 }
 
