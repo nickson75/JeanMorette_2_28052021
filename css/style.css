@@ -143,6 +143,10 @@
     margin-right: 10px;
 }
 
+.filtre div:hover, .sm-thumbnail:hover, .thumbnail:hover, .thumbnail-2:hover{
+    background-color: var(--bleu-clair);
+}
+
 
 
 
@@ -237,6 +241,10 @@
 
 #activites {
     padding-bottom: 40px;
+}
+
+header nav div{
+    flex-basis: 50%;
 }
 
 
@@ -422,6 +430,10 @@ span, input {
 
 @media (min-width: 1024px) {
 
+    header nav {
+        flex-wrap: nowrap;
+    }
+
     nav div {
         
     }
@@ -438,7 +450,7 @@ span, input {
     }
 
     nav div:nth-child(2) a, nav div:nth-child(3) a, nav div:nth-child(4) a {
-        
+    }
 
     nav div:nth-child(2):hover, nav div:nth-child(3):hover, nav div:nth-child(4):hover {
         border-top: 2px solid var(--bleu);
