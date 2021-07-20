@@ -1,0 +1,198 @@
+/* Général */
+
+* {
+	box-sizing: border-box;
+    outline: none;
+    transition: all 0.3s ease 0s; /*effet de transition appliqué sur toutes les propriétés de toutes les balises*/
+}
+
+body{
+    margin: 0 auto;
+    font-family: 'Raleway', sans-serif;
+}
+
+
+
+/* Annulation de propriétés */
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+ul {
+    list-style-type: none;
+    flex-basis: 100%;
+}
+
+
+
+/* Couleurs */
+
+:root { 
+    --bleu-clair: #DEEBFF; 
+    --bleu: #0065FC;
+    --gris: #F2F2F2;
+}
+
+.bleu {
+    color: var(--bleu);
+}
+
+.gris {
+    color: var(--gris);
+}
+
+
+
+/* Tailles des polices */
+
+h1{
+    font-size: 1.5rem;
+}
+
+h3 {
+    font-size: 1rem;
+}
+
+p{
+    font-size: 0.8rem;
+}
+
+
+
+/* Tailles des polices */
+
+
+
+/* Centrer */
+
+.center {
+    text-align: center;
+}
+
+
+
+/* Navbar */
+
+header nav {
+    display: grid;
+    grid-template-columns: 5fr 1fr 1fr 1fr;
+    padding-top: 45px;
+}
+
+header nav div :not(first-child) {
+    text-align: center
+}
+
+
+
+/* Barre de recherche */
+
+.fa-map-marker-alt {
+    color: black;
+    background-color: var(--gris);
+    padding: 15px;
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+}
+
+.search {
+    margin: 20px 0;
+    border: 1px solid var(--gris);
+    border-radius: 15px;
+}
+
+.search input {
+    border: none;
+    padding-left: 1rem;
+}
+
+.search button {
+    color: white;
+    background-color: var(--bleu);
+    padding: 15px;
+    border: none;
+    border-radius: 15px;
+    
+}
+
+
+
+
+/* Filtres */
+
+.filtre {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.filtre a i {
+    color: var(--bleu);
+    background-color: var(--bleu-clair);
+    font-size: 1rem;
+    padding: 14px;
+    border-radius: 25px;
+}
+
+.filtre div {
+    border: 2px solid silver;
+    padding: 0 12px 0 0;
+    border-radius: 25px;
+    align-items: center;
+}
+
+.filtre span {
+    padding-left: 10px;
+    padding-right: 5px;
+}
+
+.filtre a {
+    margin-bottom: 10px;
+    margin-right: 10px;
+}
+
+.filtre div:hover, .sm-thumbnail:hover, .thumbnail:hover, .thumbnail-2:hover{
+    background-color: var(--bleu-clair);
+}
+
+
+
+/* Blocs */
+
+.container {
+    margin: 0 50px;
+}
+
+
+/* Vignettes */
+
+.card {
+
+}
+
+aside .card {
+    
+
+}
+
+aside .card .card-title{
+    padding: 0 20px; 
+
+}
+
+#hebergements .card {
+
+}
+
+#hebergements .card .card-title {
+    padding: 0 15px;
+}
+
+#activites .card {
+    padding: 20px
+}
+
+#activites .card .card-title {
+    padding: 0 20px;
+}

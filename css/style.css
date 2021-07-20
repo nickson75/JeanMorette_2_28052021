@@ -271,8 +271,17 @@ body{
     
 }
 
+body > div {
+    margin-top: 150px;
+}
+
 header {
-    padding-bottom: 40px;
+    position:fixed;
+    top: 0;
+    left: 0;
+    height: 150px;
+    width: 100%;
+    background-color: white;
 }
 
 h1{
@@ -310,6 +319,59 @@ li i {
 
 span, input {
     font-weight: bold;
+
+}
+
+
+@media (max-width: 1023px) {
+
+    .ancres {
+        border-bottom: 0.2rem solid var(--gris);
+        padding-bottom: 15px;
+    }
+    
+    .ancres:hover {
+        border-bottom: 0.2rem solid var(--gris);
+        padding-bottom: 15px;
+    }
+    
+    .ancres:active {
+        border-bottom: 0.2rem solid var(--bleu);
+        padding-bottom: 15px;
+    }
+    
+    .ancres:visited {
+        border-bottom: 0.2rem solid var(--bleu);
+        padding-bottom: 15px;
+    }
+    
+    
+    header nav div {
+        flex-wrap: wrap;
+        flex-basis: 50%;
+        padding-top: 30px;
+    }
+    
+    header nav div:nth-child(2){
+        order: 3;
+        display: flex;
+        justify-content: center;
+    }
+    
+    header nav div:nth-child(3){
+        order: 4;
+        display: flex;
+        justify-content: center;
+    }
+    
+    header nav div:nth-child(4){
+        order: 2;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+    }
+
+    
 }
 
 @media (min-width: 402px) {
@@ -379,54 +441,7 @@ span, input {
 
 }
 
-@media (max-width: 1023px) {
 
-    .ancres {
-        border-bottom: 0.2rem solid var(--gris);
-        padding-bottom: 15px;
-    }
-    
-    .ancres:hover {
-        border-bottom: 0.2rem solid var(--gris);
-        padding-bottom: 15px;
-    }
-    
-    .ancres:active {
-        border-bottom: 0.2rem solid var(--bleu);
-        padding-bottom: 15px;
-    }
-    
-    .ancres:visited {
-        border-bottom: 0.2rem solid var(--bleu);
-        padding-bottom: 15px;
-    }
-    
-    nav a {
-        flex-basis: 50%;
-        padding-top: 30px;
-    }
-    
-    nav > a:nth-child(2){
-        order: 3;
-        display: flex;
-        justify-content: center;
-    }
-    
-    nav > a:nth-child(3){
-        order: 4;
-        display: flex;
-        justify-content: center;
-    }
-    
-    nav > a:nth-child(4){
-        order: 2;
-        display: flex;
-        align-items: center;
-        justify-content: flex-end;
-    }
-
-    
-}
 
 @media (min-width: 1024px) {
 
