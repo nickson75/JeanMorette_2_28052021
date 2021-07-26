@@ -1,10 +1,17 @@
 /* Général */
 
-* {
-	box-sizing: border-box;
+*, *::before, *::after {
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
     outline: none;
     transition: all 0.3s ease 0s; /*effet de transition appliqué sur toutes les propriétés de toutes les balises*/
 }
+
+
+html {
+    font-size:62.5%,
+}  
 
 body{
     margin: 0 auto;
@@ -164,11 +171,20 @@ header nav div :not(first-child) {
     margin: 0 50px;
 }
 
+.articles-card{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 30px;
+}
 
 /* Vignettes */
 
 .card {
 
+}
+
+.card > img {
+    
 }
 
 aside .card {
@@ -193,6 +209,6 @@ aside .card .card-title{
     padding: 20px
 }
 
-#activites .card .card-title {
+#activites .card div {
     padding: 0 20px;
 }
