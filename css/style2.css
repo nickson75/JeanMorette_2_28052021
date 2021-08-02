@@ -124,6 +124,10 @@ header nav div :not(first-child) {
     
 }
 
+.rechercher span:nth-child(2){
+    visibility: hidden;
+}
+
 
 
 
@@ -171,20 +175,63 @@ header nav div :not(first-child) {
     margin: 0 50px;
 }
 
+aside {
+    padding: 40px 35px;
+    background-color: var(--gris);
+}
+
+article {
+    padding: 40px;
+    background-color: var(--gris);
+}
+
+.hebergements {
+    display: grid;
+    grid-template-columns: 2.1fr 1fr;
+    grid-gap: 40px;
+}
+
 .articles-card{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-gap: 30px;
+    
 }
+
+.aside-card{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 30px;
+    
+}
+
 
 /* Vignettes */
 
 .card {
-
+    background-color: white;
+    padding: 5px;
+    margin-bottom: 10px;
+    border-radius: 20px;
+    height: 200px;
+    box-shadow: 0 0 10px silver;
 }
 
-.card > img {
-    
+.card > div:first-child {
+    height: 120px;
+    object-fit: cover;
+}
+
+.card > div:nth-child(2) {
+    padding: 10px 15px;
+    height: 80px; 
+}
+
+.card img {
+    width: auto;
+    height: auto;
+    max-width: 100%;
+    max-height: 100%;
 }
 
 aside .card {
