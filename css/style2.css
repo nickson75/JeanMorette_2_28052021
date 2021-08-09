@@ -54,19 +54,31 @@ ul {
 
 /* Tailles des polices */
 
-h1{
+h1 {
     font-size: 1.5rem;
+    padding-top: 35px;
+    padding-bottom: 10px;
 }
+
+h2 {
+    font-size: 1.35rem;
+} 
 
 h3 {
     font-size: 1rem;
 }
 
-p{
-    font-size: 0.8rem;
+p {
+    font-size: 0.85rem;
 }
 
+.article-container-stars i {
+    font-size: 0.78rem;
+}
 
+.aside-container-stars i {
+    font-size: 0.65rem;
+}
 
 /* Tailles des polices */
 
@@ -88,8 +100,13 @@ header nav {
     padding-top: 45px;
 }
 
-header nav div :not(first-child) {
+header nav div :not(:first-child) {
     text-align: center
+}
+
+header nav div:hover:not(:first-child){
+    color: var(--bleu);
+    border-top: 2px solid var(--bleu);
 }
 
 
@@ -125,9 +142,16 @@ header nav div :not(first-child) {
 }
 
 .rechercher span:nth-child(2){
-    visibility: hidden;
+    display: none;
 }
 
+
+
+/* Icons */
+
+.icon-arrow {
+    font-size: 1.35rem;
+}
 
 
 
@@ -175,40 +199,78 @@ header nav div :not(first-child) {
     margin: 0 50px;
 }
 
+.container-h2 {
+    margin-bottom: 25px;
+}
+
+
+
+footer {
+    background-color: var(--gris);
+    padding: 45px 0;
+    margin-top: 60px;
+}
+
 aside {
     padding: 40px 35px;
     background-color: var(--gris);
+    border-radius: 20px;
 }
 
-article {
+.hotels article {
     padding: 40px;
     background-color: var(--gris);
+    border-radius: 20px;
 }
 
-.hebergements {
+.hotels {
     display: grid;
     grid-template-columns: 2.1fr 1fr;
     grid-gap: 40px;
+    margin-top: 35px;
 }
 
-.articles-card{
+.article-grid-cards {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-gap: 30px;
     
 }
 
-.aside-card{
+.aside-container-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.aside-grid-cards {
     display: grid;
     grid-template-columns: 1fr;
     grid-gap: 30px;
     
 }
 
+.activities {
+    margin-top: 60px;
+}
 
-/* Vignettes */
+.activities-grid-cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-gap: 40px;
+    grid-template-areas:
+    "a b d e"
+    "a c d f";
+}
 
-.card {
+
+/* VIGNETTES */
+
+
+/* Vignettes article */
+
+.article-card { 
     background-color: white;
     padding: 5px;
     margin-bottom: 10px;
@@ -217,45 +279,197 @@ article {
     box-shadow: 0 0 10px silver;
 }
 
-.card > div:first-child {
+.article-card-container-img {
     height: 120px;
-    object-fit: cover;
 }
 
-.card > div:nth-child(2) {
+.article-card-container-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+
+.acticle-card-container-info {
     padding: 10px 15px;
     height: 80px; 
 }
 
-.card img {
-    width: auto;
-    height: auto;
-    max-width: 100%;
-    max-height: 100%;
+.acticle-card-container-info h3 {
+     
 }
 
-aside .card {
+.acticle-card-container-info p {
+     
+}
+
+.acticle-card-container-info div{
+     
+}
+
+.afficher-plus {
+    display: inline-block;
+    font-weight: bold;
+    font-size: 1rem;
+    margin-top: 35px;
+}
+
+/* Vignettes aside */
+
+.aside-card { 
+    background-color: white;
+    padding: 5px;
+    margin-bottom: 10px;
+    border-radius: 20px;
+    height: 145px;
+    box-shadow: 0 0 10px silver;
+    display: grid;
+    grid-template-columns: 1fr 1.6fr;
+}
+
+.aside-card-container-img {
+    height: 100%;
+    max-height: 135px;
+}
+
+.aside-card-container-img img {
     
-
+    width: 100%;
+    height: 100%;
+    max-height: 100%;
+    object-fit: cover;
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
 }
 
-aside .card .card-title{
-    padding: 0 20px; 
-
+.aside-card-container-info {
+    padding: 10px 15px;
+    height: 100%;
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
-#hebergements .card {
-
+.aside-card-container-info h3 {
+    padding-bottom: 12px;
 }
 
-#hebergements .card .card-title {
+.aside-card-container-info h3 {
+     
+}
+
+.aside-card-container-info p {
+     
+}
+
+.aside-card-container-info div{
+     
+}
+
+/* Vignettes activities */
+
+.activities-card { 
+    background-color: white;
+    margin-bottom: 10px;
+    border-radius: 20px;
+    box-shadow: 0 0 10px silver;
+    display: grid;
+    grid-template-rows: 1fr 55px;
+}
+
+.activities-card-duo-container{
+    display: grid;
+    grid-gap: 30px;
+}
+
+.activities-card-container-img {
+    max-height: auto;
+}
+
+.activities-card-container-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    
+}
+
+.activities-card-container-info {
     padding: 0 15px;
+    height: 55px; 
+    display: flex;
+    align-items: center;
 }
 
-#activites .card {
-    padding: 20px
+.activities-card-container-info h3 {
+     
 }
 
-#activites .card div {
-    padding: 0 20px;
+.activities-card-size-1 {
+    height: 445px;
+    grid-area: a;
+}
+
+.activities-card-container-img-size-1 {
+    height: 390px;
+}
+
+.activities-card-size-2 {
+    height: 240px;
+    grid-area: b;
+}
+
+.activities-card-container-img-size-2 {
+    height: 185px;
+}
+
+.activities-card-size-3 {
+    height: 210px;
+    grid-area: c;
+}
+
+.activities-card-container-img-size-3 {
+    height: 155px;
+}
+
+.activities-card-size-4 {
+    height: 195px;
+    grid-area: d;
+}
+
+.activities-card-container-img-size-4 {
+    height: 140px;
+}
+
+.activities-card-size-5 {
+    height: 165px;
+    grid-area: e;
+}
+
+.activities-card-container-img-size-5 {
+    height: 110px;
+}
+
+
+/* FOOTER */
+
+
+.footer-links-containers {
+    display: flex;
+}
+
+.footer-links {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.footer-links h3 {
+    margin-bottom: 25px;
+}
+
+.footer-links a {
+    margin-bottom: 15px;
 }
