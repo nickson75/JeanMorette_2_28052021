@@ -142,7 +142,8 @@ header nav div:last-child span{
     margin: 20px 0 30px;
     border: 1px solid var(--gris);
     border-radius: 15px;
-    width: 420px;
+    width: 100%;
+    max-width: 420px;
     display: flex;
     
 }
@@ -186,31 +187,42 @@ header nav div:last-child span{
 
 /* Filtres */
 
-.filtre {
+.filtres {
+    display: flex;
+}
+
+.filtres-titre {
+    margin-right: 30px;
+    display: flex;
+    align-items: center;
+}
+
+.filtres-content {
     display: flex;
     flex-wrap: wrap;
     
 }
 
-.filtre > div {
+.filtres-content > div {
     display: flex;
     align-items: center;
     height: 50px;
     margin: 0 35px 0 15px;
 }
 
-.filtre p {
+.filtres p {
     
     font-size: 1rem;
     font-weight: bold;
     
 }
 
-.filtre a:not(:last-child) {
-    margin-right: 25px;
+
+.filtres-content a:not(:first-child) {
+    margin-left: 20px;
 }
 
-.filtre a i {
+.filtres-content a i {
     color: var(--bleu);
     background-color: var(--bleu-clair);
     font-size: 1rem;
@@ -218,25 +230,25 @@ header nav div:last-child span{
     border-radius: 25px;
 }
 
-.filtre a span {
+.filtres-content span {
     font-weight: bold;
 }
 
-.filtre a div {
+.filtres-content a div {
     border: 2px solid silver;
     padding: 0 12px 0 0;
     border-radius: 25px;
     align-items: center;
 }
 
-.filtre span {
+.filtres-content span {
     padding-left: 10px;
     padding-right: 5px;
 }
 
 
 
-.filtre a div:hover {
+.filtres-content a div:hover {
     background-color: var(--bleu-clair);
 }
 
@@ -270,7 +282,7 @@ header nav div:last-child span{
 
 .logo-info {
     color: var(--bleu);
-    font-weight: 400;
+    
 
 }
 
@@ -348,9 +360,6 @@ aside {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-gap: 40px;
-    grid-template-areas:
-    "a b d e"
-    "a c d f";
 }
 
 
@@ -608,7 +617,7 @@ aside {
     }
 
     .hotels article {
-        padding: 40px 20px;
+        padding: 40px 20px 0;
         background-color: white;
         border-radius: 0px;
         order: 2;
@@ -674,6 +683,7 @@ aside {
 
     header nav div:nth-child(1) {
         order: 1;
+        margin-left: 20px;
     }
 
     header nav div:nth-child(2) {
@@ -698,14 +708,23 @@ aside {
 
     header nav div:nth-child(4) {
         order: 2;
+        margin-right: 20px;
+        display: flex;
+        justify-content: flex-end;
     }
+
+    .inscription {
+        display: flex;
+        align-items: center;
+    }
+        
 
     header nav div:not(:first-child) {
         text-align: center;
     }
 
     header nav div:hover:not(:first-child) {
-        border-top: 2px solid var(--bleu);
+        border-top: 0;
     }
 
     header nav span:hover {
@@ -717,5 +736,78 @@ aside {
     }
 
 
+    /* Barre de recherche */
+
+    .fa-map-marker-alt {
+        color: black;
+        background-color: var(--gris);
+        padding: 17px 19px;
+        border-top-left-radius: 15px;
+        border-bottom-left-radius: 15px;
+    }
+
+    .search {
+        margin: 35px 0 35px;
+    
+    }
+
+    .rechercher span:nth-child(1){
+        display: none;
+    }
+
+    .rechercher span:nth-child(2){
+        display: contents;
+    }
+
+    /* Filtres */
+
+    .filtres {
+        flex-direction: column;
+    }
+
+    .filtres-content a:nth-child(3), .filtres-content a:nth-child(4) {
+        margin-left: 0;
+    }
+
+    .filtres-content {
+        display: flex;
+        flex-wrap: wrap;
+        
+    }
+
+    .filtres-content div {
+        margin-top : 12px;
+    }
+
+    .filtres-titre {
+        
+        margin-bottom: 6px;
+        
+    }
+
+    /* Infos */
+
+
+    .info {
+        margin-bottom: 40px;
+    }
+
+    /* Infos */
+
+    .activities-card {
+        height: 190px;
+    }
+
+    .activities-card-container-img {
+        height: 135px;
+    }
+
+    .activities-grid-cards {
+        grid-gap: 20px;
+    }
+
+    .activities-card-duo-container{
+        grid-gap: 20px;
+    }
 
 }
