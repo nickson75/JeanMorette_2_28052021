@@ -1,0 +1,94 @@
+/* Vignettes Activités */
+
+.activites {
+    padding: 60px 50px;
+}
+
+.activites-grid-cards {
+    
+    padding-top: 25px;
+    display: grid;
+    
+  
+    grid-template-areas: 
+                        "one two four five"
+                        "one two four six"
+                        "one three four six";
+    grid-template-rows: 195px 40px 210px;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+
+    /*grid-template: 
+            ".a .b .d .e" auto 60% auto 48%
+            ".a .c .d .f" auto 40% auto 52%; */
+    
+}
+
+.activities-card { 
+    background-color: white;
+    border-radius: 20px;
+    box-shadow: 0 0 10px silver;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.activites-card:hover { 
+    background-color: var(--bleu-clair);
+}
+
+
+.activites-card-container-img {
+    height: 90%;
+}
+
+.activites-card-container-img div {
+    height: 100px;
+}
+
+.activites-card-img {
+    width: 100%;
+    height: 100%;
+    max-width: 300px;
+    object-fit: cover;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    
+}
+
+.activites-card-container-info {
+    padding: 0 15px;
+    height: 55px; 
+    display: flex;
+    align-items: center;
+}
+
+.activites-card-01 {
+    grid-area: one;
+    display: flex;
+}
+
+.activites-card-02 {
+    grid-area: two;
+    display: flex;
+}
+
+.activites-card-03 {
+    grid-area: three;
+    display: flex;
+}
+
+.activites-card-04 {
+    grid-area: four;
+    display: flex;
+}
+
+.activites-card-05 {
+    grid-area: five;
+    display: flex;
+}
+
+.activites-card-06 {
+    grid-area: six;
+    display: flex;
+}
