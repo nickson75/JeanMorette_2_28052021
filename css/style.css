@@ -130,6 +130,7 @@ p {
 .nav-container > div {
     height: 100%;
     padding-top: 50px;
+    border-top: 3px solid white;
 }
 
 .nav-container-logo {
@@ -163,7 +164,8 @@ header nav span:hover {
 @media (max-width: 1023px) { 
 
     .nav-container {
-        padding: 0; 
+        padding: 0;
+         
     }
 
     .nav-container-logo {
@@ -184,6 +186,7 @@ header nav span:hover {
         flex-basis: 50%;
         height: 50%;
         padding-top: 0;
+        border-top: 0;
     }
 
     .nav-container-logo {
