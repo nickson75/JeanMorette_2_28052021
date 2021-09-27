@@ -99,6 +99,12 @@ h3 {
     font-weight: 600;
 }
 
+@media (min-width: 1280px) and (max-width: 1299px) { 
+    h3 {
+        font-size: 0.9rem;
+    }
+}
+
 p {
     font-size: 0.85rem;
 }
@@ -472,7 +478,7 @@ header nav span:hover {
     padding: 0 50px;
 }
 
-@media (max-width: 1299px) {
+@media (max-width: 1279px) {
 
     .hotel-grid-container {
         grid-template-columns: 1fr;
@@ -542,7 +548,7 @@ header nav span:hover {
     color: var(--bleu);
 }
 
-@media (max-width: 1299px) {
+@media (max-width: 1279px) {
 
     .hotel-article-grid-container {
         padding: 40px 50px 0;
@@ -639,7 +645,7 @@ aside {
     margin-top: 12px;
 }
 
-@media (max-width: 1299px) {
+@media (max-width: 1279px) {
 
     aside {
         order: -1;
@@ -863,6 +869,22 @@ footer {
     }
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
