@@ -18,24 +18,37 @@ body{
     font-family: 'Raleway', sans-serif;
 }
 
-.header {
-    width: 100%;
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 2;
+main {
+    display: grid;
+    grid-template-areas: 
+                        "hebergements aside"
+                        "activites activites";
+
+    grid-template-columns: 2.1fr 1fr;
+    place-content: stretch;
+    column-gap: 2.78vw;
+    padding: 0 calc(3.472vw);
 }
 
-.main {
-    width: 100%;
-    position: relative;
-    top: 130px;
-    left: 0;
-    z-index: 1;
-
+#hebergements {   
+    grid-area: hebergements;
 }
 
+aside {
+    grid-area: aside;
+}
 
+#activites {
+    grid-area: activites;
+}
+
+footer {
+    grid-area: footer;
+}
+
+header, main, nav {
+    max-width: 1440px;
+}
 
 #hebergements {
     padding-top: 130px; 
@@ -109,7 +122,7 @@ p {
     font-size: 0.85rem;
 }
 
-.article-container-stars i {
+.section-container-stars i {
     font-size: 0.78rem;
 }
 
@@ -131,6 +144,11 @@ p {
     display: flex;
     flex-wrap: wrap;
     background-color: white;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 2;
 }
 
 .nav-container > div {
@@ -257,6 +275,7 @@ header nav span:hover {
 
 .header-container {
     padding: 0 50px 40px;
+    margin-top: 130px;
 }
 
 @media (max-width: 1023px) {
@@ -465,38 +484,15 @@ header nav span:hover {
 }
 
 
+/* Vignettes Hotels section */
 
-
-
-
-/* Container Hotels */
-
-.hotel-grid-container {
-    display: grid;
-    grid-template-columns: 2.1fr 1fr;
-    grid-gap: 40px;
-    padding: 0 50px;
-}
-
-@media (max-width: 1279px) {
-
-    .hotel-grid-container {
-        grid-template-columns: 1fr;
-        grid-gap: 0;
-        padding: 0;
-    }
-}
-
-
-/* Vignettes Hotels article */
-
-.hotel-article-grid-container {
-    padding: 45px 40px 50px;
+.hotel-section-grid-container {
+    padding: 45px 2.78vw 50px;
     background-color: var(--gris);
     border-radius: 20px;
 }
 
-.hotel-article-grid-cards{
+.hotel-section-grid-cards{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 30px;
@@ -504,7 +500,7 @@ header nav span:hover {
 
 }
 
-.hotel-article-card {
+.hotel-section-card {
     background-color: white;
     padding: 5px;
     margin-bottom: 10px;
@@ -513,16 +509,16 @@ header nav span:hover {
     box-shadow: 0 0 10px silver;
 }
 
-.hotel-article-card:hover { 
+.hotel-section-card:hover { 
     background-color: var(--bleu-clair);
 }
 
-.hotel-article-card-container-img {
+.hotel-section-card-container-img {
     height: 120px;
     
 }
 
-.hotel-article-card-img {
+.hotel-section-card-img {
     height: 100%;
     width: 100%;
     object-fit: cover;
@@ -530,12 +526,12 @@ header nav span:hover {
     border-top-right-radius: 15px;
 }
 
-.hotel-article-card-container-info {
+.hotel-section-card-container-info {
     padding: 10px 15px;
     height: 80px;
 }
 
-.hotel-article-container-stars {
+.hotel-section-container-stars {
     font-size: 0.8rem;
     margin-top: 3px;
 }
@@ -548,27 +544,20 @@ header nav span:hover {
     color: var(--bleu);
 }
 
-@media (max-width: 1279px) {
 
-    .hotel-article-grid-container {
-        padding: 40px 50px 0;
+@media (max-width: 1023px) {
+
+    .hotel-section-grid-container {
+        padding: 2.78vw 3.47vw 0;
         background-color: white;
         border-radius: 0;
     }
 
 }
 
-@media (max-width: 1023px) {
-
-    .hotel-article-grid-container {
-        padding: 40px 20px 0;
-    }
-
-}
-
 @media (max-width: 760px) {
 
-    .hotel-article-grid-cards{
+    .hotel-section-grid-cards{
         grid-template-columns: repeat(2, 1fr);
     }
 
@@ -576,7 +565,7 @@ header nav span:hover {
 
 @media (max-width: 500px) {
 
-    .hotel-article-grid-cards{
+    .hotel-section-grid-cards{
         grid-template-columns: 1fr;
     }
 
@@ -588,7 +577,7 @@ header nav span:hover {
 /* Vignettes Hotels aside */
 
 aside {
-    padding: 40px 35px;
+    padding: 40px 2.43vw;
     background-color: var(--gris);
     border-radius: 20px;
 }
@@ -645,20 +634,6 @@ aside {
     margin-top: 12px;
 }
 
-@media (max-width: 1279px) {
-
-    aside {
-        order: -1;
-        padding: 30px 50px 35px;
-        border-radius: 0;
-    }
-
-    .aside-grid-cards {
-        grid-template-columns: repeat(3, 1fr);
-        grid-gap: 30px;
-    }
-
-}
 
 @media (max-width: 1074px) {
 
@@ -671,7 +646,14 @@ aside {
 @media (max-width: 1023px) {
 
     aside {
+        order: -1;
         padding: 30px 20px 35px;
+        border-radius: 0;
+    }
+
+    .aside-grid-cards {
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 30px;
     }
 
 }
@@ -689,7 +671,7 @@ aside {
 /* Vignettes Activités */
 
 .activites {
-    padding: 60px 50px;
+    padding: 60px 0;
 }
 
 .activites-grid-cards {
