@@ -14,24 +14,51 @@ html {
 }  
 
 body{
-    margin: 0 auto;
     font-family: 'Raleway', sans-serif;
+}
+
+header {
+    margin: 0 auto;
 }
 
 main {
     display: grid;
     grid-template-areas: 
-                        "hebergements aside"
-                        "activites activites";
-
-    grid-template-columns: 2.1fr 1fr;
+                        "aside"
+                        "hebergements"
+                        "activites";
+    grid-template-columns: 1fr;
     place-content: stretch;
     column-gap: 2.78vw;
-    padding: 0 calc(3.472vw);
+    /*padding: 0 calc(3.472vw);*/
+    margin: 0 auto;
 }
+
+@media (min-width: 1024px) { 
+    main {
+        display: grid;
+        grid-template-areas: 
+                            "hebergements aside"
+                            "activites activites";
+    
+        grid-template-columns: 2.1fr 1fr;
+        place-content: stretch;
+        column-gap: 2.78vw;
+        /*padding: 0 calc(3.472vw);*/
+    }
+}
+
+@media (min-width: 1490px) { 
+    main {
+        padding: 0;
+    }
+}
+
 
 #hebergements {   
     grid-area: hebergements;
+    padding-top: 130px; 
+    margin-top: -130px; 
 }
 
 aside {
@@ -46,14 +73,11 @@ footer {
     grid-area: footer;
 }
 
-header, main, nav {
+.header-container, main, nav {
     max-width: 1440px;
 }
 
-#hebergements {
-    padding-top: 130px; 
-    margin-top: -130px; 
-}
+
 
 #activites {
     padding-top: 130px; 
@@ -108,13 +132,31 @@ h2 {
 } 
 
 h3 {
-    font-size: 1rem;
     font-weight: 600;
+    font-size: 1rem;
 }
 
-@media (min-width: 1280px) and (max-width: 1299px) { 
+@media (min-width: 1024px) { 
+    h3 {
+        font-size: 0.74rem;
+    }
+}
+
+@media (min-width: 1078px) { 
+    h3 {
+        font-size: 0.8rem;
+    }
+}
+
+@media (min-width: 1172px) { 
     h3 {
         font-size: 0.9rem;
+    }
+}
+
+@media (min-width: 1266px) { 
+    h3 {
+        font-size: 1rem;
     }
 }
 
@@ -138,17 +180,28 @@ p {
 
 /* Navbar */
 
-.nav-container {
+.nav-container-fixed {
     height: 130px;
     padding: 0 50px;
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
     background-color: white;
     width: 100%;
     position: fixed;
     top: 0;
     left: 0;
     z-index: 2;
+}
+
+.nav-container {
+    height: 130px;
+    display: flex;
+    flex-wrap: wrap;
+    background-color: white;
+    width: 100%;
+    max-width: 1440px;
+   
 }
 
 .nav-container > div {
@@ -281,6 +334,14 @@ header nav span:hover {
 @media (max-width: 1023px) {
     .header-container {
         padding: 0 20px 40px;
+    }
+}
+
+@media (min-width: 1490px) {
+    .header-container {
+        padding: 0 0 40px;
+        margin-left: auto;
+        margin-right: auto;
     }
 }
 
@@ -487,7 +548,7 @@ header nav span:hover {
 /* Vignettes Hotels section */
 
 .hotel-section-grid-container {
-    padding: 45px 2.78vw 50px;
+    padding: 45px 0 50px;
     background-color: var(--gris);
     border-radius: 20px;
 }
@@ -497,13 +558,13 @@ header nav span:hover {
     grid-template-columns: repeat(3, 1fr);
     gap: 30px;
     padding: 25px 0 40px;
+    margin: 0 20px;
 
 }
 
 .hotel-section-card {
     background-color: white;
     padding: 5px;
-    margin-bottom: 10px;
     border-radius: 20px;
     height: 200px;
     box-shadow: 0 0 10px silver;
@@ -538,6 +599,7 @@ header nav span:hover {
 
 .afficher-plus {
     font-weight: 600;
+    margin-left: 20px;
 }
 
 .afficher-plus:hover {
@@ -548,7 +610,7 @@ header nav span:hover {
 @media (max-width: 1023px) {
 
     .hotel-section-grid-container {
-        padding: 2.78vw 3.47vw 0;
+        padding-top: 40px;
         background-color: white;
         border-radius: 0;
     }
@@ -559,11 +621,12 @@ header nav span:hover {
 
     .hotel-section-grid-cards{
         grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
     }
 
 }
 
-@media (max-width: 500px) {
+@media (max-width: 767px) {
 
     .hotel-section-grid-cards{
         grid-template-columns: 1fr;
@@ -635,10 +698,18 @@ aside {
 }
 
 
-@media (max-width: 1074px) {
+@media (max-width: 1023px) {
 
     .aside-grid-cards {
         grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+@media (max-width: 768px) {
+
+    .aside-grid-cards {
+        grid-template-columns: 1fr;
     }
 
 }
@@ -658,7 +729,7 @@ aside {
 
 }
 
-@media (max-width: 680px) {
+@media (max-width: 767px) {
 
     .aside-grid-cards {
         grid-template-columns: 1fr;
@@ -687,6 +758,43 @@ aside {
     place-content: stretch;
     gap: 40px;
     
+}
+
+@media (max-width: 1023px) {
+
+    .activites-grid-cards {
+    
+        grid-template-areas: 
+                            "card-one card-two"
+                            "card-one card-two"
+                            "card-one card-three"
+                            "card-four card-five"
+                            "card-four card-six"
+                            "card-four card-six";
+        grid-template-rows: 193px 0px 210px 193px 0px 210px;
+        grid-template-columns: repeat(2, 1fr);
+      
+    }
+
+}
+
+@media (max-width: 767px) {
+
+    .activites-grid-cards {
+    
+        grid-template-areas: 
+                            "card-one"
+                            "card-two"
+                            "card-three"
+                            "card-four"
+                            "card-five"
+                            "card-six";
+        grid-template-rows: repeat(6, 190px);
+        grid-template-columns: 1fr;
+        gap: 20px;
+      
+    }
+
 }
 
 .activites-card { 
@@ -759,57 +867,19 @@ aside {
 }
 
 
-
-
-@media (max-width: 1210px) {
-
-    .activites-grid-cards {
-    
-        grid-template-areas: 
-                            "card-one card-two"
-                            "card-one card-two"
-                            "card-one card-three"
-                            "card-four card-five"
-                            "card-four card-six"
-                            "card-four card-six";
-        grid-template-rows: 193px 0px 210px 193px 0px 210px;
-        grid-template-columns: repeat(2, 1fr);
-      
-    }
-
-}
-
-@media (max-width: 575px) {
-
-    .activites-grid-cards {
-    
-        grid-template-areas: 
-                            "card-one"
-                            "card-two"
-                            "card-three"
-                            "card-four"
-                            "card-five"
-                            "card-six";
-        grid-template-rows: repeat(6, 190px);
-        grid-template-columns: 1fr;
-        gap: 20px;
-      
-    }
-
-}
-
-
 /* FOOTER */
 
 
 footer {
     background-color: var(--gris);
-    padding: 50px;
+    padding: 50px 0;
 }
 
 .footer-links-containers {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
+    max-width: 1440px;
+    margin: 0 20px;
 }
 
 .footer-links {
