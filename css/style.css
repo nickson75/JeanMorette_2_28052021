@@ -13,7 +13,7 @@ html {
     font-size:62.5%,
 }  
 
-body{
+body {
     font-family: 'Raleway', sans-serif;
 }
 
@@ -29,28 +29,17 @@ main {
                         "activites";
     grid-template-columns: 1fr;
     place-content: stretch;
-    column-gap: 2.78vw;
-    /*padding: 0 calc(3.472vw);*/
+    column-gap: 2.08vw;
     margin: 0 auto;
 }
 
 @media (min-width: 1024px) { 
     main {
-        display: grid;
         grid-template-areas: 
                             "hebergements aside"
                             "activites activites";
     
-        grid-template-columns: 2.1fr 1fr;
-        place-content: stretch;
-        column-gap: 2.78vw;
-        /*padding: 0 calc(3.472vw);*/
-    }
-}
-
-@media (min-width: 1490px) { 
-    main {
-        padding: 0;
+        grid-template-columns: 2.1fr 1fr;  
     }
 }
 
@@ -182,7 +171,7 @@ p {
 
 .nav-container-fixed {
     height: 130px;
-    padding: 0 50px;
+    padding: 0 3.47vw;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -192,6 +181,18 @@ p {
     top: 0;
     left: 0;
     z-index: 2;
+}
+
+@media (max-width: 1279px) { 
+    .nav-container-fixed {
+        padding: 0 1.39vw;
+    }
+}
+
+@media (min-width: 1490px) { 
+    .nav-container-fixed {
+        padding: 0;
+    }
 }
 
 .nav-container {
@@ -237,8 +238,7 @@ header nav span:hover {
     color: var(--bleu);
 }
 
-
-@media (max-width: 1023px) { 
+@media (max-width: 767px) { 
 
     .nav-container {
         padding: 0;
@@ -252,12 +252,6 @@ header nav span:hover {
     .nav-container-inscription {
         padding-right: 20px;
     }
-
-}
-
-@media (max-width: 767px) { 
-
-    
 
     .nav-container > div {
         flex-basis: 50%;
@@ -327,13 +321,13 @@ header nav span:hover {
 /* Header hors Navbar */
 
 .header-container {
-    padding: 0 50px 40px;
+    padding: 0 3.47vw 40px;
     margin-top: 130px;
 }
 
-@media (max-width: 1023px) {
+@media (max-width: 1279px) {
     .header-container {
-        padding: 0 20px 40px;
+        padding: 0 1.39vw 40px;
     }
 }
 
@@ -548,18 +542,31 @@ header nav span:hover {
 /* Vignettes Hotels section */
 
 .hotel-section-grid-container {
-    padding: 45px 0 50px;
+    padding: 45px 2.78vw 50px;
     background-color: var(--gris);
     border-radius: 20px;
+    margin-left: 3.47vw;
 }
 
-.hotel-section-grid-cards{
+@media (min-width: 768px) and (max-width: 1279px) {
+
+    .hotel-section-grid-container {
+        margin-left: 1.39vw;    
+    }
+}
+
+@media (min-width: 1440px) {
+
+    .hotel-section-grid-container {
+        margin-left: auto;    
+    }
+}
+
+.hotel-section-grid-cards {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 30px;
+    gap: 2.08vw;
     padding: 25px 0 40px;
-    margin: 0 20px;
-
 }
 
 .hotel-section-card {
@@ -599,7 +606,6 @@ header nav span:hover {
 
 .afficher-plus {
     font-weight: 600;
-    margin-left: 20px;
 }
 
 .afficher-plus:hover {
@@ -621,7 +627,7 @@ header nav span:hover {
 
     .hotel-section-grid-cards{
         grid-template-columns: repeat(2, 1fr);
-        gap: 20px;
+        gap: 1.39vw;
     }
 
 }
@@ -643,6 +649,21 @@ aside {
     padding: 40px 2.43vw;
     background-color: var(--gris);
     border-radius: 20px;
+    margin-right: 3.47vw;
+}
+
+@media (min-width: 768px) and (max-width: 1279px) {
+
+    aside {
+        margin-right: 1.39vw;    
+    }
+}
+
+@media (min-width: 1440px) {
+
+    aside {
+        margin-right: auto;   
+    }
 }
 
 .aside-container-title {
@@ -654,8 +675,16 @@ aside {
 .aside-grid-cards {
     display: grid;
     grid-template-columns: 1fr;
-    grid-gap: 30px;
+    grid-gap: 2.08vw;
     margin-top: 30px;
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+
+    .aside-grid-cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
 }
 
 .aside-card { 
@@ -697,23 +726,6 @@ aside {
     margin-top: 12px;
 }
 
-
-@media (max-width: 1023px) {
-
-    .aside-grid-cards {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-}
-
-@media (max-width: 768px) {
-
-    .aside-grid-cards {
-        grid-template-columns: 1fr;
-    }
-
-}
-
 @media (max-width: 1023px) {
 
     aside {
@@ -721,20 +733,6 @@ aside {
         padding: 30px 20px 35px;
         border-radius: 0;
     }
-
-    .aside-grid-cards {
-        grid-template-columns: repeat(3, 1fr);
-        grid-gap: 30px;
-    }
-
-}
-
-@media (max-width: 767px) {
-
-    .aside-grid-cards {
-        grid-template-columns: 1fr;
-    }
-
 }
 
 
@@ -742,7 +740,21 @@ aside {
 /* Vignettes Activités */
 
 .activites {
-    padding: 60px 0;
+    padding: 60px 3.47vw;
+}
+
+@media (min-width: 768px) and (max-width: 1279px) {
+
+    .activites {
+        padding: 60px 1.39vw;    
+    }
+}
+
+@media (min-width: 1440px) {
+
+    .activites {
+        padding: 60px 0;    
+    }
 }
 
 .activites-grid-cards {
@@ -756,7 +768,7 @@ aside {
     grid-template-rows: 193px 0px 210px;
     grid-template-columns: repeat(4, 1fr);
     place-content: stretch;
-    gap: 40px;
+    gap: 2.78vw;
     
 }
 
@@ -791,7 +803,7 @@ aside {
                             "card-six";
         grid-template-rows: repeat(6, 190px);
         grid-template-columns: 1fr;
-        gap: 20px;
+        gap: 1.39vw;
       
     }
 
@@ -872,14 +884,28 @@ aside {
 
 footer {
     background-color: var(--gris);
-    padding: 50px 0;
+    padding: 50px 3.47vw;
+}
+
+@media (min-width: 768px) and (max-width: 1279px) {
+
+    footer {
+        padding: 50px 1.39vw;
+    }
 }
 
 .footer-links-containers {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     max-width: 1440px;
-    margin: 0 20px;
+}
+
+@media (min-width: 1441px) {
+
+    .footer-links-containers {
+        margin: 0 auto;
+    }
+
 }
 
 .footer-links {
