@@ -503,8 +503,19 @@ header nav span:hover {
 
 /* Filtres */
 
+
 .filtres {
     display: flex;
+    gap: 24px;
+    flex-wrap: wrap;
+}
+
+@media (max-width: 991px) {
+
+    .filtres {
+        gap: 12px;
+        
+    }
 }
 
 .filtres-titre {
@@ -512,13 +523,14 @@ header nav span:hover {
     display: flex;
     align-items: center;
     height: 50px;
-    width: 85px;
+    width: 61px;
 
 }
 
 @media (max-width: 991px) {
     .filtres-titre {
         align-items: end;
+        width: 100%
     }
 }
 
@@ -541,7 +553,7 @@ header nav span:hover {
     align-items: center;
     height: 50px;
     border: 2px solid silver;
-    padding: 0 12px 0 0;
+    padding: 0 15px 0 0;
     border-radius: 25px;
     align-items: center;
 }
@@ -570,24 +582,14 @@ header nav span:hover {
 
 
 @media (max-width: 991px) {
-
-    .filtres {
-        flex-direction: column;
-    }
     
     .filtres-titre {
-        margin: 0 30px 15px 0;
+        margin: 0 30px 3px 0;
     
     }
 }
 
-@media (max-width: 810px) {
 
-    .filtres-content {
-        gap: 12px;
-        
-    }
-}
 
 /* Infos */
 
