@@ -541,13 +541,6 @@ header nav span:hover {
     
 }
 
-.filtres-content {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 24px;
-    
-}
-
 .filtre-bouton {
     display: flex;
     align-items: center;
