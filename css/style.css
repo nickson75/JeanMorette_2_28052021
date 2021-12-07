@@ -8,11 +8,6 @@
     transition: all 0.3s ease 0s; /*effet de transition appliqué sur toutes les propriétés de toutes les balises*/
 }
 
-
-html {
-    font-size:62.5%,
-}  
-
 body {
     font-family: 'Raleway', sans-serif;
 }
@@ -60,6 +55,7 @@ main {
     padding: 0 var(--desktop-20px);
     max-width: 1440px;
     margin: 0 auto;
+    
 }
 
 @media (min-width: 992px) { 
@@ -93,22 +89,20 @@ main {
 
 #hebergements {   
     grid-area: hebergements;
-    padding-top: 130px; 
-    margin-top: -130px; 
+    padding-top: 130px;
+    z-index: 1;
 }
 
-@media (max-width: 991px) {
-    #hebergements {
-        padding-left: var(--pad-20px);
-        padding-right: var(--pad-20px);
+@media (max-width: 991px) { 
+    #hebergements {   
+        margin-top: -130px;
     }
 }
 
-@media (max-width: 767px) {
-    #hebergements {
-        padding-left: var(--mobile-20px);
-        padding-right: var(--mobile-20px);
-    }
+aside {
+    grid-area: aside;
+    padding-top: 130px;
+    z-index: 1;
 }
 
 #activites {
@@ -148,7 +142,6 @@ a {
 
 ul {
     list-style-type: none;
-    flex-basis: 100%;
 }
 
 
@@ -206,12 +199,6 @@ ul {
 h1 {
     font-size: 1.5rem;
     padding-bottom: 10px;
-}
-
-@media (max-width: 768px) { 
-    h1 {
-        padding-top: 35px;
-    }
 }
 
 h2 {
@@ -280,7 +267,7 @@ p {
     position: fixed;
     top: 0;
     left: 0;
-    z-index: 2;
+    z-index: 4;
 }
 
 @media (max-width: 1279px) { 
@@ -431,7 +418,9 @@ header nav span:hover {
 /* Header hors Navbar */
 
 .header-container {
-    margin-top: 130px;
+    position: relative;
+    top: 130px;
+    z-index: 2;
 }
 
 
@@ -457,10 +446,16 @@ header nav span:hover {
     
 }
 
+@media (max-width: 991px) {
+    .search {
+        margin: 20px 0 0;
+    }
+}
+
 .search input {
     border: none;
     padding-left: 1rem;
-    flex: 1;
+    width: 100%;
 }
 
 .search input[type=text] {
@@ -485,12 +480,7 @@ header nav span:hover {
 }
 
 
-@media (max-width: 470px) {
-
-    .search {
-        margin: 35px 0 35px;
-    
-    }
+@media (max-width: 767px) {
 
     .rechercher span:nth-child(1){
         display: none;
@@ -515,44 +505,48 @@ header nav span:hover {
 
 .filtres {
     display: flex;
-    flex-direction: row;
 }
 
 .filtres-titre {
-    margin: 0 30px 0 0;
     padding-left: 10px;
     display: flex;
     align-items: center;
-
-}
-
-.filtres-content {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 25px;
-    
-}
-
-.filtres-content > div {
-    display: flex;
-    align-items: center;
     height: 50px;
-    margin: 0 35px 0 15px;
+    width: 85px;
+
 }
 
-.filtres p {
+@media (max-width: 991px) {
+    .filtres-titre {
+        align-items: end;
+    }
+}
+
+.filtres-titre h2 {
     
     font-size: 1rem;
     font-weight: bold;
     
 }
 
-
-.filtres-content a:not(:first-child) {
+.filtres-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
     
 }
 
-.filtres-content a i {
+.filtre-bouton {
+    display: flex;
+    align-items: center;
+    height: 50px;
+    border: 2px solid silver;
+    padding: 0 12px 0 0;
+    border-radius: 25px;
+    align-items: center;
+}
+
+.filtre-bouton i {
     color: var(--bleu);
     background-color: var(--bleu-clair);
     font-size: 1rem;
@@ -560,25 +554,17 @@ header nav span:hover {
     border-radius: 25px;
 }
 
-.filtres-content span {
+.filtre-bouton span {
     font-weight: bold;
-}
-
-.filtres-content a div {
-    border: 2px solid silver;
-    padding: 0 12px 0 0;
-    border-radius: 25px;
-    align-items: center;
-}
-
-
-.filtres-content span {
     padding-left: 10px;
     padding-right: 5px;
 }
 
+.filtre-bouton:hover {
+    background-color: var(--bleu-clair);
+}
 
-.filtres-content a div:hover {
+.filtre-bouton:focus {
     background-color: var(--bleu-clair);
 }
 
@@ -595,7 +581,7 @@ header nav span:hover {
     }
 }
 
-@media (max-width: 829px) {
+@media (max-width: 810px) {
 
     .filtres-content {
         gap: 12px;
@@ -642,6 +628,7 @@ header nav span:hover {
     padding: 45px var(--desktop-40px) 50px;
     background-color: var(--gris);
     border-radius: 20px;
+    height: 625px;
 }
 
 @media (max-width: 991px) {
@@ -649,15 +636,22 @@ header nav span:hover {
     .hotel-section-grid-container {
         background-color: white;
         border-radius: 0;
-        padding: 45px var(--desktop-20px) 50px;
+        padding: 45px var(--pad-20px) 50px;
+        height: auto;
     }
 
+}
+
+@media (max-width: 767px) {
+    .hotel-section-grid-container {
+        padding: 45px var(--mobile-20px) 50px;
+    }
 }
 
 @media (min-width: 1440px) {
 
     .hotel-section-grid-container {
-        padding: 45px 20px 50px;  
+        padding: 45px 40px 50px;  
     }
 }
 
@@ -734,31 +728,32 @@ header nav span:hover {
 
 /* Vignettes Hotels aside */
 
-aside {
+.aside {
     padding: 45px var(--desktop-35px) 35px;
     background-color: var(--gris);
     border-radius: 20px;
-    grid-area: aside;
+    height: 625px;
 }
 
 @media (max-width: 991px) {
 
-    aside {
+    .aside {
         order: -1;
         padding: 30px var(--pad-20px) 35px;
         border-radius: 0;
+        height: auto;
     }
 }
 
 @media (max-width: 767px) {
-    aside {
+    .aside {
         padding: 30px var(--mobile-20px) 35px;
     }
 }
 
 @media (min-width: 1440px) {
 
-    aside {
+    .aside {
         padding: 45px 35px 35px;
     }
 
@@ -897,7 +892,6 @@ aside {
                             "card-four card-six";
         grid-template-rows: 193px 0px 210px 193px 0px 210px;
         grid-template-columns: repeat(2, 1fr);
-      
     }
 
 }
@@ -1060,7 +1054,7 @@ footer {
     margin-bottom: 15px;
 }
 
-.footer-links li:hover {
+.footer-links li a:hover {
     color: var(--bleu);
 }
 
